@@ -22,7 +22,6 @@
 #include <linux/mutex.h>
 #include <linux/module.h>
 #include <linux/slab.h>
-#include <linux/cpufreq_limit.h>
 #ifdef CONFIG_STATE_NOTIFIER
 #include <linux/state_notifier.h>
 #endif
@@ -53,8 +52,6 @@ struct hotplug_cpuparm {
 	unsigned int down_rate;
 	unsigned int cur_down_rate;
 };
-
-EXPORT_SYMBOL_GPL(get_cpu_idle_time);
 
 static DEFINE_PER_CPU_SHARED_ALIGNED(struct hotplug_cpuinfo, ac_hp_cpuinfo);
 static DEFINE_PER_CPU(struct hotplug_cpuparm, ac_hp_cpuparm);
